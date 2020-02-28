@@ -9,9 +9,9 @@ $config['index'] = "sim";
 
 
 $db['host'] = "103.249.103.31";
-$db['db_user'] = "tksimcard_home";
-$db['db_name'] = "tksimcard_home";
-$db['db_pass'] = "@hyn12345";
+$db['db_user'] = "";
+$db['db_name'] = "";
+$db['db_pass'] = "";
 
 if (file_exists(__DIR__ . "/../conf2.php")) {
     require __DIR__ . "/../conf2.php";

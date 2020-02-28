@@ -89,3 +89,15 @@ require_once "v3/elatic.php"; #Thêm dòng này
             $data[] = $row;
         }
 ```
+#file search.php fix function
+```
+    function namsinh($d, $m, $y, $x)
+    {
+
+
+        $where = "and simnamsinh ='" . $d . "-" . $m . "-" . $y . "' and type ='" . $x . "'";
+
+        return $where;
+    }
+
+```

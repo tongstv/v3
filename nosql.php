@@ -206,12 +206,12 @@ class nosql
             $data[] = $row;
 
 
-            echo $i . " " . $row['sim2'] . " => NOSQL <br>";
         }
         $this->bulk_data($data, $this->index);
         if($db->query("update sim SET sync = 1 WHERE sim2 IN(" . join(', ', $sims) . ")"))
         {
-            echo "UPDATE SYNC 1";
+
+            file_put_contents(__DIR__ . "/logs/syncdb.txt", date('d/m/Y H:i:s') . " SQL => SYNC: " . count($sims) . " TO ELATIC"));
             unset($sims);
 
         }

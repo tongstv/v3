@@ -346,17 +346,158 @@ function SqlToElatic($sql2)
     }
 
 
-    if (preg_match('/and(\s)?\(right\(sim2,8\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,7\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,7\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,6\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,6\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,5\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,5\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,4\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,4\)=\'([0-9]+)\'\)/', $sql, $array)) {
+    if (preg_match('/and(\s)?simnamsinh(\s)?=\'([0-9-]+)\'(\s)?and(\s)?type(\s)?=\'([0-9]+)\'/', $sql, $array)) {
 
-        print_r($array);
+        list($ngay, $thang, $nam) = explode("-", $array[3]);
+        $type = $array[7];
+
+
+        if ($ngay < 10 AND $thang < 10) {
+            $jayParsedAry =
+                [
+                    "bool" => [
+                        "should" => [
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . $ngay . $thang . $nam
+
+                                    ]
+                                ]
+                            ],
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . $ngay . $thang . substr($nam, -2, 2)
+                                    ]
+                                ]
+                            ],
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . substr($ngay, -1, 1) . substr($thang, -1, 1) . $nam
+                                    ]
+                                ]
+                            ],
+
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . substr($ngay, -1, 1) . $thang . $nam
+                                    ]
+                                ]
+                            ],
+
+
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . $ngay . substr($thang, -1, 1) . $nam
+                                    ]
+                                ]
+                            ]
+
+                        ]
+                    ]
+
+                ];
+
+        } else if ($ngay >= 10 AND $thang < 10) {
+            $jayParsedAry =
+                [
+                    "bool" => [
+                        "should" => [
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . $ngay . $thang . $nam
+
+                                    ]
+                                ]
+                            ],
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . $ngay . $thang . substr($nam, -2, 2)
+                                    ]
+                                ]
+                            ],
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . $ngay . substr($thang, -1, 1) . $nam
+                                    ]
+                                ]
+                            ]
+
+                        ]
+                    ]
+
+                ];
+
+        } else {
+            $jayParsedAry =
+                [
+                    "bool" => [
+                        "should" => [
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . $ngay . $thang . $nam
+
+                                    ]
+                                ]
+                            ],
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . $ngay . $thang . substr($nam, -2, 2)
+                                    ]
+                                ]
+                            ],
+                            [
+                                "wildcard" => [
+                                    "sim2" => [
+                                        "wildcard" => "*" . substr($ngay, -1, 1) . $thang . $nam
+                                    ]
+                                ]
+                            ]
+
+                        ]
+                    ]
+
+                ];
+
+        }
+
+
+        if ($type == 2) {
+            foreach ($jayParsedAry AS $key => $value) {
+                if (substr($value, -4, 4) == $nam) {
+                    unset($jayParsedAry[$key]);
+                }
+            }
+        }
+        if ($type == 1) {
+            foreach ($jayParsedAry AS $key => $value) {
+                if (substr($value, -2, 2) == substr($nam, -2, 2)) {
+                    unset($jayParsedAry[$key]);
+                }
+            }
+        }
+
+
+        unset($body);
+        $body['body']['query'] = $jayParsedAry;
+
 
     }
 
     if (isset($body)) {
-        file_put_contents("log", json_encode($body));
+        file_put_contents(__DIR__ . "/logs/elatic.txt", json_encode($body));
         $sql .= "\n\n==================================\n\n";
         $sql .= str_replace(['(', ')', ' '], ['\(', '\)', '(\s)?'], $sql);
-        file_put_contents("sql.txt", $sql);
+        file_put_contents(__DIR__ . "/logs/sql.txt", $sql);
     }
 
 

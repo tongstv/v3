@@ -346,9 +346,17 @@ function SqlToElatic($sql2)
     }
 
 
+    if (preg_match('/and(\s)?\(right\(sim2,8\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,7\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,7\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,6\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,6\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,5\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,5\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,4\)=\'([0-9]+)\'(\s)?||(\s)?right\(sim2,4\)=\'([0-9]+)\'\)/', $sql, $array)) {
+
+        print_r($array);
+
+    }
+
     if (isset($body)) {
         file_put_contents("log", json_encode($body));
-        file_put_contents("sql1.txt", $sql);
+        $sql .= "\n\n==================================\n\n";
+        $sql .= str_replace(['(', ')', ' '], ['\(', '\)', '(\s)?'], $sql);
+        file_put_contents("sql.txt", $sql);
     }
 
 

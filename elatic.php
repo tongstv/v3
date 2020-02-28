@@ -1,0 +1,360 @@
+<?php
+
+namespace elatic;
+if (!defined('JSON_PRESERVE_ZERO_FRACTION')) {
+    define('JSON_PRESERVE_ZERO_FRACTION', 1024);
+}
+require __DIR__ . '/vendor/autoload.php';
+
+use Elasticsearch\ClientBuilder;
+
+$client = ClientBuilder::create()->build();
+
+function getById($id)
+{
+    global $client;
+
+    $params['index'] = "sim";
+    $params['type'] = "_doc";
+    $params['id'] = $id;
+    $response = [];
+
+    $response = $client->get($params)['_source'];
+
+
+    return $response;
+
+}
+
+function log($log)
+{
+    global $client;
+
+    $params['index'] = "logs";
+    $params['type'] = "_doc";
+    $params['body'] = $log;
+    $client->index($params);
+}
+
+function maploai($url)
+{
+    $loais = ['sim-luc-quy' => 1,
+        'sim-ngu-quy' => 2,
+        'sim-tu-quy' => 3,
+        'sim-tam-hoa-kep' => 4,
+        'sim-taxi-hai' => 5, /// nâng cấp
+        'sim-taxi-ba' => 6, // bổ xung
+        'sim-tam-hoa' => 7,
+        'sim-tien-don' => 8,
+        'sim-luc-quy-giua' => 9,
+        'sim-loc-phat' => 10,
+        'sim-than-tai' => 11,
+        'sim-ong-dia' => 12,
+        'sim-kep' => 13, // bổ xung
+        'sim-lap' => 14, // nâng cấp
+        'sim-ngu-quy-giua' => 15,
+        'sim-tu-quy-giua' => 16,
+        'sim-dao' => 17, // bổ xung
+        'sim-ganh' => 18, /// sim gánh
+        'sim-phu-quy' => 19,
+        'sim-dac-biet' => 20,
+        'sim-nam-sinh' => 21,
+        'dau-so-co' => 22,
+        'sim-de-nho' => 23,
+    ];
+    return $loais[$url];
+}
+function deletesimdl($simdl)
+{
+    global $client;
+    $client->deleteByQuery([
+        'index' => 'sim',
+        'type' => '_doc',
+        'body' => [
+            'query' => [
+                'match' =>
+                    ['simdl' => $simdl]
+
+
+            ]]
+    ]);
+}
+
+function num_rows($sql)
+{
+    global $client;
+    $body = SqlToElatic($sql);
+    $result = $client->search($body);
+    require $result['hits']['total'];
+}
+
+function getSim($i, $sql)
+{
+    global $client;
+
+    $body = SqlToElatic($sql);
+
+    $result = $client->search($body);
+//print_r($result);
+    $hits = $result['hits']['hits'];
+    $total = $result['hits']['total'];
+
+    $data = [];
+
+    if (is_array($hits)) {
+
+        foreach ($hits AS $row) {
+            $i++;
+            $row['_source']['stt'] = $i;
+            $data[] = $row['_source'];
+        }
+    }
+
+    return ['data' => $data, 'total' => $total];
+
+
+}
+
+
+
+function SqlToElatic($sql2)
+{
+    $sql = strtolower($sql2);
+
+
+    if (preg_match('/from(\s)?([\S]+)/', $sql, $index)) {
+        $body['index'] = (string)$index[2];
+    }
+
+    if (preg_match('/limit(\s)?([0-9]+)(\s)?\,(\s)?([0-9]+)/', $sql, $limit)) {
+        $from = $limit[2];
+        $size = $limit[5];
+        $body['body']['from'] = $from;
+        $body['body']['size'] = $size;
+
+    }
+
+
+    if (preg_match('/order(\s)?by(\s)?([\S]+)(\s)?([\S]+)/', $sql, $orderby)) {
+        if (in_array($orderby[5], ['desc', 'asc'])) {
+            $body['body']['sort'][$orderby[3]]['order'] = strtolower($orderby[5]);
+        }
+
+    }
+
+
+    $and = [];
+    if (preg_match('/r?like(\s)?\'([0-9\.\*]+)\'/', $sql, $rlike)) {
+
+        $and[] = [
+            'wildcard' => [
+
+                'sim2' => [
+                    'wildcard' => "*" . str_replace(".*", "", $rlike[2])
+
+                ]
+            ]
+
+        ];
+
+
+    }
+    if (preg_match('/and(\s)?\(RIGHT\(sim2\,([\d]+)\)(\s)?=(\s)?\'([0-9]+)\')/', $sql, $duoi)) {
+
+        $and[] = [
+            'wildcard' => [
+
+                'sim2' => [
+                    'wildcard' => "*" . $duoi[5]
+
+                ]
+            ]
+
+        ];
+
+
+    }
+    if (preg_match('/sim2(\s)?rlike(\s)?\'\^([0-9]+).*\'/', $sql, $dau)) {
+
+        $and[] = [
+            'wildcard' => [
+
+                'sim2' => [
+                    'wildcard' => $dau[3] . "*"
+
+                ]
+            ]
+
+        ];
+
+
+    }
+
+    if (preg_match('/right\(tong\,1\)(\s)?=(\s)?([0-9]+)/', $sql, $tong)) {
+
+
+        $and[] = [
+            'term' => [
+                'tong' =>
+                    ['value' => $tong[3]]
+            ]
+        ];
+
+
+    }
+
+    if (preg_match('/r?like(\s)?\'\.\*([0-9]+)\\$\'/', $sql, $rlike)) {
+
+        $and[] = [
+            'wildcard' => [
+
+                'sim2' => [
+                    'wildcard' => "*" . str_replace(".*", "", $rlike[2])
+
+                ]
+            ]
+
+        ];
+
+
+    }
+
+    if (preg_match('/r?like(\s)?\'\^([0-9]+)\.\*([0-9]+)\$\'/', $sql, $rlike)) {
+
+        $and[] = [
+            'wildcard' => [
+
+                'sim2' => [
+                    'wildcard' => $rlike[2] . "*" . $rlike[3]
+
+                ]
+            ]
+
+        ];
+
+
+    }
+    if (preg_match('/and(\s)?\(?mang(\s)?=(\s)?([\d]+)\)?/', $sql, $mang)) {
+
+        $and[] = [
+            'term' => [
+                'mang' =>
+                    ['value' => $mang[4]]
+            ]
+        ];
+    }
+    if (preg_match('/loai(\s)?=(\s?)([0-9]+)/', $sql, $loai)) {
+
+        $and[] = [
+            'term' => [
+                'loai' =>
+                    ['value' => $loai[3]]
+            ]
+        ];
+    }
+
+
+    if (preg_match('/simdl(\s)?in(\s)?\(([0-9]+)\)/', $sql, $simdl)) {
+
+
+        $and[] = [
+            'terms' => [
+                'simdl' => @explode(",", $simdl[3])
+
+            ]
+        ];
+    }
+    if (preg_match('/and(\s)?\(?tong(\s)?=(\s)?([\d]+)\)?/', $sql, $tong)) {
+        $and[] = [
+            'term' => [
+                'tong' =>
+                    ['value' => $tong[4]]
+            ]
+        ];
+    }
+    if (preg_match('/and(\s)?\(left\(sim2,2\)(\s)?=(\s)?\'([0-9]+)\'\)/', $sql, $dau)) {
+        $and[] = [
+            'term' => [
+                'dau' =>
+                    ['value' => $dau[4]]
+            ]
+        ];
+    }
+    if (preg_match('/and(\s)?\(?tongnut(\s)?=(\s)?([\d]+)\?\)?/', $sql, $tongnut)) {
+        $and[] = [
+            'term' => [
+                'tongnut' =>
+                    ['value' => $tongnut[3]]
+            ]
+        ];
+    }
+
+    if (preg_match('/and(\s)?\(?left\(sim2\,2\)(\s)?=(\s)?([\d]+)\)?/', $sql, $dauso)) {
+        $and[] = [
+            'term' => [
+                'dauso' =>
+                    ['value' => $dauso[4]]
+            ]
+        ];
+    }
+
+
+    if (preg_match('/and(\s)?\(giaban(\s)?>=(\s)?([\d]+)(\s)?and(\s)?giaban(\s)?<=(\s)?([\d]+)\)/', $sql, $range)) {
+
+
+        $and[] = ['range' =>
+            ['giaban' =>
+                [
+                    'from' => $range[4],
+                    'to' => $range[9]
+                ]
+
+            ]
+        ];
+
+
+    }
+
+    if (preg_match('/and(\s)?\(?giaban(\s)?>(\s)?100\)?/', $sql, $range)) {
+
+
+        $and[] = ['range' =>
+            ['giaban' =>
+                [
+                    'from' => 100,
+                    'to' => null
+                ]
+
+            ]
+        ];
+
+
+    }
+    $i = 0;
+
+    foreach ($and as $bool) {
+        $i++;
+        $tempbool[] = $bool;
+        if ($i % 2 == 0) {
+            $body['body']['query']['bool']['must'][]['bool']['must'] = array_values($tempbool);
+            unset($tempbool);
+        }
+    }
+
+    if (isset($tempbool)) {
+        $body['body']['query']['bool']['must'] = $tempbool;
+    }
+
+
+    if (isset($body)) {
+        file_put_contents("log", json_encode($body));
+        file_put_contents("sql1.txt", $sql);
+    }
+
+
+
+    return $body;
+
+}
+
+//print_r(SqlToElatic("select * from sim where sim=1"));

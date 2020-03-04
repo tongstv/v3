@@ -25,7 +25,7 @@ if (file_exists(__DIR__ . "/../conf2.php")) {
 
 $nosql = new nosql($config);
 $new=0;
-if($argv[1]=="new")
+if(isset($argv[1]) AND $argv[1]=="new")
 {
     $new =1;
     echo "Đồng bộ lại";

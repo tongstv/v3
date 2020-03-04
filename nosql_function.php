@@ -46,6 +46,7 @@ function loai($num)
         21 => ['Sim Năm sinh', 'sim-nam-sinh'], //21
         22 => ['Sim đầu số cổ', 'sim-dau-co'], //22
         23 => ['Sim dễ nhớ', 'sim-de-nho'], //23
+        24 => ['sim ngày tháng năm sinh','sim-ngay-thang-nam-sinh']
     ];
     return $loai[$num] ? $loai[$num] : '';
 }
@@ -77,6 +78,7 @@ function loais()
         'sim-nam-sinh' => 21,
         'sim-dau-co' => 22,
         'sim-de-nho' => 23,
+        'sim-ngay-thang-nam-sinh' => 21
 
     );
     return $loais;

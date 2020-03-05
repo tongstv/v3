@@ -57,23 +57,26 @@ function maploai($url)
         'sim-taxi-hai' => 5, /// nâng cấp
         'sim-taxi-ba' => 6, // bổ xung
         'sim-tam-hoa' => 7,
-        'sim-tien-don' => 8,
-        'sim-luc-quy-giua' => 9,
-        'sim-loc-phat' => 10,
-        'sim-than-tai' => 11,
-        'sim-ong-dia' => 12,
-        'sim-kep' => 13, // bổ xung
-        'sim-lap' => 14, // nâng cấp
-        'sim-ngu-quy-giua' => 15,
-        'sim-tu-quy-giua' => 16,
-        'sim-dao' => 17, // bổ xung
-        'sim-ganh' => 18, /// sim gánh
-        'sim-phu-quy' => 19,
-        'sim-dac-biet' => 20,
-        'sim-nam-sinh' => 21,
-        'sim-dau-co' => 22,
-        'sim-de-nho' => 23,
-        'sim-ngay-thang-nam-sinh' => 21
+        'sim-tien-kep' => 8, // bổ xung
+        'sim-tien-doi' => 9, // bổ xung
+        'sim-ganh-kep' => 10, // bổ xung
+        'sim-kep-ba' => 11, // bổ xung
+        'sim-tien-don' => 12,
+        'sim-luc-quy-giua' => 13,
+        'sim-loc-phat' => 14,
+        'sim-than-tai' => 15,
+        'sim-ong-dia' => 16,
+        'sim-kep' => 17, // bổ xung
+        'sim-lap' => 18, // nâng cấp
+        'sim-ngu-quy-giua' => 19,
+        'sim-tu-quy-giua' => 20,
+        'sim-dao' => 21, // bổ xung
+        'sim-ganh' => 22, /// sim gánh
+        'sim-phu-quy' => 23,
+        'sim-dac-biet' => 24,
+        'sim-nam-sinh' => 25,
+        'sim-dau-co' => 26,
+        'sim-de-nho' => 27,
 
     );
     return $loais[$url];

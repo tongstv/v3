@@ -182,7 +182,8 @@ class nosql
     public function syncdb($config,$new=0)
     {
 
-        $this->map();
+        global $home_db_db;
+        $this->map($home_db_db);
 
         $db = new mysqli($config['host'], $config['db_user'], $config['db_pass'],
             $config['db_name']);

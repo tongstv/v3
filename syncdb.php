@@ -19,6 +19,7 @@ if (file_exists(__DIR__ . "/../conf2.php")) {
     $db['db_user'] = $home_db_user;
     $db['db_name'] = $home_db_db;
     $db['db_pass'] = $home_db_pass;
+    $config['index'] = $home_db_db;
 
 
 }

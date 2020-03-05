@@ -12,9 +12,9 @@ $client = ClientBuilder::create()->build();
 
 function getById($id)
 {
-    global $client;
+    global $client,$home_db_db;
 
-    $params['index'] = "sim";
+    $params['index'] = $home_db_db;
     $params['type'] = "_doc";
     $params['id'] = $id;
     $response = [];
@@ -29,9 +29,9 @@ function getById($id)
 
 function log($log)
 {
-    global $client;
+    global $client,$home_db_db;
 
-    $params['index'] = "logs";
+    $params['index'] = $home_db_db."_logs";
     $params['type'] = "_doc";
     $params['body'] = $log;
     $client->index($params);
@@ -40,7 +40,7 @@ function error_log($log)
 {
     global $client;
 
-    $params['index'] = "error_logs";
+    $params['index'] = $home_db_db."_error_logs";
     $params['type'] = "_doc";
     $params['body'] = $log;
     $client->index($params);
@@ -134,12 +134,13 @@ function getSim($i, $sql)
 
 function SqlToElatic($sql2)
 {
+    global  $home_db_db;
     $sql = strtolower($sql2);
     $sql=str_replace('[0-9]',".*",$sql);
 
 
     if (preg_match('/from(\s)?([\S]+)/', $sql, $index)) {
-        $body['index'] = (string)$index[2];
+        $body['index'] = $home_db_db;
     }
 
     if (preg_match('/limit(\s)?([0-9]+)(\s)?\,(\s)?([0-9]+)/', $sql, $limit)) {

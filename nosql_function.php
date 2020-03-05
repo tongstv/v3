@@ -311,7 +311,8 @@ function simtomang($sim)
 
         '099',
         '0199',
-        '059'
+        '059',
+        '052'
     );
     $mang[6] = array(
         '087'

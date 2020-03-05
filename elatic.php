@@ -80,9 +80,9 @@ function maploai($url)
 }
 function deletesimdl($simdl)
 {
-    global $client;
+    global $client, $home_db_db;
     $client->deleteByQuery([
-        'index' => 'sim',
+        'index' => $home_db_db,
         'type' => '_doc',
         'body' => [
             'query' => [

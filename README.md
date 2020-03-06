@@ -104,5 +104,11 @@ require_once "v3/elatic.php"; #Thêm dòng này
 ```
 
 #$fix cron.php
+modules/cron.php
 
- include __DIR__."/../v3/syncdb.php";
+<?php 
+ini_set("display_errors",1);
+include __DIR__."/../v3/syncdb.php";
+include 'app/share/cron.php';
+
+

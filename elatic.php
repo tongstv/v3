@@ -38,7 +38,7 @@ function log($log)
 }
 function error_log($log)
 {
-    global $client;
+    global $client, $home_db_db;
 
     $params['index'] = $home_db_db."_error_logs";
     $params['type'] = "_doc";

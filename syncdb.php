@@ -8,7 +8,11 @@ $config['hosts'] = ["http://localhost:9200"];
 
 
 if (file_exists(__DIR__ . "/../conf2.php")) {
-    require __DIR__ . "/../conf2.php";
+   if(!function_exists('create_loai'))
+   {
+       require __DIR__ . "/../conf2.php";
+   }
+
     $db2['host'] = "localhost";
     $db2['db_user'] = $home_db_user;
     $db2['db_name'] = $home_db_db;

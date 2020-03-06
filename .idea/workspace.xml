@@ -18,8 +18,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/syncdb.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://E:/FlashFXP/Cache/~flashfxp/D7ACE040_edit.tmp/conf2.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -79,11 +88,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/update.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -127,6 +131,7 @@
         <option value="E:/FlashFXP/Cache/~flashfxp/010304A1_edit.tmp/nosql.php" />
         <option value="$PROJECT_DIR$/elatic.php" />
         <option value="$PROJECT_DIR$/nosql.php" />
+        <option value="E:/FlashFXP/Cache/~flashfxp/D7ACE040_edit.tmp/conf2.php" />
         <option value="$PROJECT_DIR$/syncdb.php" />
       </list>
     </option>
@@ -214,12 +219,12 @@
       <workItem from="1583388641637" duration="28000" />
       <workItem from="1583389629055" duration="667000" />
       <workItem from="1583484672554" duration="1394000" />
-      <workItem from="1583487108947" duration="729000" />
+      <workItem from="1583487108947" duration="896000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3262000" />
+    <option name="totallyTimeSpent" value="3429000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1931" height="1056" extended-state="0" />
@@ -331,10 +336,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/syncdb.php">
+    <entry file="file://E:/FlashFXP/Cache/~flashfxp/D7ACE040_edit.tmp/conf2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/syncdb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>

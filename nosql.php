@@ -1,9 +1,25 @@
 <?php
 date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . "/nosql_function.php";
 require __DIR__ . "/elatic.php";
+register_shutdown_function("shutdown_error_handler");
 
+function shutdown_error_handler()
+{
+
+
+    $lasterror = error_get_last();
+    if (isset($lasterror)) {
+        $message = '' . $lasterror['type'] . ') | PHP Stopped | Message (' . $lasterror['message'] . ') | File (' . $lasterror['file'] . '';
+
+        $lasterror['url'] = ($_SERVER['HTTPS'] ? 'https://' : 'http://') . @$_SERVER['HTTP_HOST'] . @$_SERVER['REQUEST_URI'];
+        \elatic\error_log($lasterror);
+    }
+
+
+}
 use Elasticsearch\ClientBuilder;
 
 

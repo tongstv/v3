@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4300b1-fa03-4b7d-8e1a-773e5477804e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nosql.php" beforeDir="false" afterPath="$PROJECT_DIR$/nosql.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nosql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3241">
-              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+            <state relative-caret-position="241">
+              <caret line="226" column="53" selection-start-line="226" selection-start-column="53" selection-end-line="226" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -96,7 +96,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -128,11 +128,11 @@
         <option value="E:/FlashFXP/Cache/~flashfxp/C286EEA4_edit.tmp/index.php" />
         <option value="E:/FlashFXP/Cache/~flashfxp/010304A1_edit.tmp/nosql.php" />
         <option value="$PROJECT_DIR$/elatic.php" />
-        <option value="$PROJECT_DIR$/nosql.php" />
         <option value="E:/FlashFXP/Cache/~flashfxp/D7ACE040_edit.tmp/conf2.php" />
         <option value="E:/FlashFXP/Cache/~flashfxp/1E7C34C6_edit.tmp/cron.php" />
         <option value="$PROJECT_DIR$/syncdb.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/nosql.php" />
       </list>
     </option>
   </component>
@@ -219,23 +219,23 @@
       <workItem from="1583388641637" duration="28000" />
       <workItem from="1583389629055" duration="667000" />
       <workItem from="1583484672554" duration="1394000" />
-      <workItem from="1583487108947" duration="1663000" />
+      <workItem from="1583487108947" duration="1864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4196000" />
+    <option name="totallyTimeSpent" value="4397000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1931" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16194548" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16194548" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.4978678" visible="true" weight="0.30888888" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4978678" visible="true" weight="0.30888888" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5026652" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="4" />
@@ -333,13 +333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nosql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3241">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/syncdb.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -354,6 +347,13 @@
             <caret line="113" selection-start-line="113" selection-end-line="113" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nosql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="226" column="53" selection-start-line="226" selection-start-column="53" selection-end-line="226" selection-end-column="53" />
         </state>
       </provider>
     </entry>

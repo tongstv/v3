@@ -224,6 +224,8 @@ class nosql
             $row['dau'] = substr($row['sim2'], 0, 2);
             $row['diem']=substr( $row['tong'] ,-1,1);
 
+            if ($row['diem'] == 0) $row['diem'] = 10;
+
             $sims[] = "'" . $row['sim2'] . "'";
             $data[] = $row;
 

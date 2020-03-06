@@ -7,7 +7,7 @@ if (!defined('JSON_PRESERVE_ZERO_FRACTION')) {
 $config['hosts'] = ["http://localhost:9200"];
 
 
-
+$db2=[];
 $db2['host'] = "localhost";
 $db2['db_user'] = $home_db_user;
 $db2['db_name'] = $home_db_db;

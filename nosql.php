@@ -15,6 +15,7 @@ function shutdown_error_handler()
         $message = '' . $lasterror['type'] . ') | PHP Stopped | Message (' . $lasterror['message'] . ') | File (' . $lasterror['file'] . '';
 
         $lasterror['url'] = ($_SERVER['HTTPS'] ? 'https://' : 'http://') . @$_SERVER['HTTP_HOST'] . @$_SERVER['REQUEST_URI'];
+        $lasterror['time'] =time();
         \elatic\error_log($lasterror);
     }
 

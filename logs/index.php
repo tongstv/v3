@@ -45,6 +45,7 @@ foreach ($result['hits']['hits'] AS $row)
 <table class="table">
     <thead>
     <tr>
+        <th>TIME</th>
         <th>FILE</th>
         <th>LINE</th>
         <th>MSG</th>
@@ -53,6 +54,7 @@ foreach ($result['hits']['hits'] AS $row)
     <tbody>
    <?php foreach ($data AS $row):?>
     <tr>
+        <td scope="row"><?php echo date('d.m.Y h:i:s',$row['time']);?></td>
         <td scope="row"><?php echo $row['file'];?></td>
         <td><?php echo $row['line'];?></td>
         <td><?php echo $row['message'];?></td>

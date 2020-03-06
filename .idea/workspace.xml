@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4300b1-fa03-4b7d-8e1a-773e5477804e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nosql.php" beforeDir="false" afterPath="$PROJECT_DIR$/nosql.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/logs/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="35" lean-forward="true" selection-end-line="73" />
+              <caret line="8" column="35" selection-end-line="73" />
             </state>
           </provider>
         </entry>
@@ -72,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nosql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="226" column="53" selection-start-line="226" selection-start-column="53" selection-end-line="226" selection-end-column="53" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -100,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="535">
+              <first_editor relative-caret-position="1921">
                 <caret line="113" selection-start-line="113" selection-end-line="113" />
               </first_editor>
               <second_editor />
@@ -220,18 +221,20 @@
       <workItem from="1583389629055" duration="667000" />
       <workItem from="1583484672554" duration="1394000" />
       <workItem from="1583487108947" duration="1864000" />
+      <workItem from="1583491974247" duration="6000" />
+      <workItem from="1583503682414" duration="235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4397000" />
+    <option name="totallyTimeSpent" value="4638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1931" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16194548" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16515233" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -284,24 +287,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/index.php">
+    <entry file="file://E:/FlashFXP/Cache/~flashfxp/E52F933A_edit.tmp/cron.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="35" lean-forward="true" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/FlashFXP/Cache/~flashfxp/C286EEA4_edit.tmp/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/FlashFXP/Cache/~flashfxp/010304A1_edit.tmp/nosql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -312,17 +301,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elatic.php">
+    <entry file="file://$PROJECT_DIR$/logs/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        <state relative-caret-position="136">
+          <caret line="8" column="35" selection-end-line="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/FlashFXP/Cache/~flashfxp/E52F933A_edit.tmp/cron.php">
+    <entry file="file://E:/FlashFXP/Cache/~flashfxp/C286EEA4_edit.tmp/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="35" />
+        <state relative-caret-position="153">
+          <caret line="9" selection-end-line="73" />
         </state>
       </provider>
     </entry>
@@ -333,6 +322,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://E:/FlashFXP/Cache/~flashfxp/010304A1_edit.tmp/nosql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1921">
+            <caret line="113" selection-start-line="113" selection-end-line="113" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elatic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/syncdb.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -340,20 +353,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="535">
-            <caret line="113" selection-start-line="113" selection-end-line="113" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nosql.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="226" column="53" selection-start-line="226" selection-start-column="53" selection-end-line="226" selection-end-column="53" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

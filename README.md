@@ -6,6 +6,7 @@
 - **sodep.php**
 - **simhot.php**
 - **ordered.php**
+- ** cron.php **
 
 ================================================
 ##Thay đổi trong các file
@@ -101,3 +102,7 @@ require_once "v3/elatic.php"; #Thêm dòng này
     }
 
 ```
+
+#$fix cron.php
+
+ include __DIR__."/../v3/syncdb.php";

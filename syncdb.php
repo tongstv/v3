@@ -8,11 +8,6 @@ $config['hosts'] = ["http://localhost:9200"];
 $config['index'] = "sim";
 
 
-$db['host'] = "localhost";
-$db['db_user'] = "";
-$db['db_name'] = "";
-$db['db_pass'] = "";
-
 if (file_exists(__DIR__ . "/../conf2.php")) {
     require __DIR__ . "/../conf2.php";
     $db['host'] = "localhost";

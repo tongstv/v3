@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4300b1-fa03-4b7d-8e1a-773e5477804e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/elatic.php" beforeDir="false" afterPath="$PROJECT_DIR$/elatic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nosql.php" beforeDir="false" afterPath="$PROJECT_DIR$/nosql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/syncdb.php" beforeDir="false" afterPath="$PROJECT_DIR$/syncdb.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/syncdb.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -52,10 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nosql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="78">
               <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
             </state>
           </provider>
@@ -122,13 +121,13 @@
       <list>
         <option value="$PROJECT_DIR$/nosql_function.php" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/syncdb.php" />
         <option value="$PROJECT_DIR$/logs/index.php" />
         <option value="E:/FlashFXP/Cache/~flashfxp/C286EEA4_edit.tmp/index.php" />
         <option value="E:/FlashFXP/Cache/~flashfxp/1E7C34C6_edit.tmp/cron.php" />
         <option value="E:/FlashFXP/Cache/~flashfxp/010304A1_edit.tmp/nosql.php" />
         <option value="$PROJECT_DIR$/elatic.php" />
         <option value="$PROJECT_DIR$/nosql.php" />
+        <option value="$PROJECT_DIR$/syncdb.php" />
       </list>
     </option>
   </component>
@@ -215,12 +214,12 @@
       <workItem from="1583388641637" duration="28000" />
       <workItem from="1583389629055" duration="667000" />
       <workItem from="1583484672554" duration="1394000" />
-      <workItem from="1583487108947" duration="663000" />
+      <workItem from="1583487108947" duration="729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3196000" />
+    <option name="totallyTimeSpent" value="3262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1931" height="1056" extended-state="0" />
@@ -325,17 +324,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/syncdb.php">
+    <entry file="file://$PROJECT_DIR$/nosql.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="78">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nosql.php">
+    <entry file="file://$PROJECT_DIR$/syncdb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>

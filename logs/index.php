@@ -1,7 +1,7 @@
 <?php
-
-if (file_exists(__DIR__ . "/../conf2.php")) {
-    require __DIR__ . "/../conf2.php";
+ini_set("display_errors",1);
+if (file_exists(__DIR__ . "/../../conf2.php")) {
+    require __DIR__ . "/../../conf2.php";
     $db['host'] = "localhost";
     $db['db_user'] = $home_db_user;
     $db['db_name'] = $home_db_db;

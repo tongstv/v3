@@ -208,9 +208,13 @@ class nosql
         {
             $db->query("update sim SET sync=0");
         }
+
+
         $this->addcol($db);
         $data = [];
-        $query = $db->query("select * from sim where sync = 0 limit 5000");
+
+        deletesynced($db);
+        $query = $db->query("select * from sim where sync = 0 limit 10000");
         $i = 0;
         while ($row = $query->fetch_assoc()) {
 

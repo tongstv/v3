@@ -1,14 +1,4 @@
 <?php
-
-
-
-
-
-
-
-
-
-
 function strstr_array_needle($haystack, $arrayNeedles)
 {
     foreach ($arrayNeedles as $needle) {

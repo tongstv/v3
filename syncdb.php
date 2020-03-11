@@ -31,10 +31,14 @@ function deletesynced($db)
 
     $res = $db->query("select * from sync");
     $simdls = [];
+    $ids=[];
     while ($row = $res->fetch_assoc()) {
 
         \elatic\deletesimdl($row['simdl']);
+
+        $ids[]=$row['id'];
     }
+    $db->query("delete from sync where id IN(".join(",",$ids).")");
 
 
 }

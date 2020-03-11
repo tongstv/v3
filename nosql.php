@@ -237,8 +237,7 @@ class nosql
         $this->bulk_data($data, $this->index);
         if($db->query("update sim SET sync = 1 WHERE sim2 IN(" . @join(', ', $sims) . ")"))
         {
-
-            file_put_contents(__DIR__ . "/logs/syncdb.txt", date('d/m/Y H:i:s') . " SQL => SYNC: " . count($sims) . " TO ELATIC");
+            
             unset($sims);
 
         }

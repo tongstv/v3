@@ -4,7 +4,7 @@ namespace elatic;
 if (!defined('JSON_PRESERVE_ZERO_FRACTION')) {
     define('JSON_PRESERVE_ZERO_FRACTION', 1024);
 }
-require __DIR__ . '/vendor/autoload.php';
+require 'app/v3/vendor/autoload.php';
 
 use Elasticsearch\ClientBuilder;
 

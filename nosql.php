@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-require __DIR__ . "/nosql_function.php";
+require "app/v3/nosql_function.php";
 ///require __DIR__ . "/elatic.php";
 register_shutdown_function("shutdown_error_handler");
 

@@ -25,7 +25,7 @@ function deletesynced($db)
 
     $db->query($sql);
 
-    $db->query("CREATE TRIGGER if NOT EXISTS `syncdelete` AFTER DELETE ON `sim`
+    $db->query("CREATE TRIGGER `syncdelete` AFTER DELETE ON `sim`
  FOR EACH ROW INSERT INTO sync (_type,simdl)
    VALUES ('DELETE', OLD.simdl)");
 

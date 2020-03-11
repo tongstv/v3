@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="be4300b1-fa03-4b7d-8e1a-773e5477804e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/for6.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elatic.php" beforeDir="false" afterPath="$PROJECT_DIR$/elatic.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nosql.php" beforeDir="false" afterPath="$PROJECT_DIR$/nosql.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nosql_function.php" beforeDir="false" afterPath="$PROJECT_DIR$/nosql_function.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/syncdb.php" beforeDir="false" afterPath="$PROJECT_DIR$/syncdb.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/syncdb.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="459">
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -32,16 +31,7 @@
         <entry file="file://$PROJECT_DIR$/logs/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://E:/FlashFXP/Cache/~flashfxp/C286EEA4_edit.tmp/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-end-line="73" />
+              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -55,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nosql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="215" column="26" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
+            <state relative-caret-position="51">
+              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -98,10 +88,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elatic.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="720" lean-forward="true" selection-start-line="720" selection-end-line="720" />
+            <state relative-caret-position="102">
+              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -134,13 +129,13 @@
         <option value="$PROJECT_DIR$/logs/index.php" />
         <option value="E:/FlashFXP/Cache/~flashfxp/C286EEA4_edit.tmp/index.php" />
         <option value="E:/FlashFXP/Cache/~flashfxp/010304A1_edit.tmp/nosql.php" />
-        <option value="$PROJECT_DIR$/elatic.php" />
         <option value="E:/FlashFXP/Cache/~flashfxp/D7ACE040_edit.tmp/conf2.php" />
         <option value="E:/FlashFXP/Cache/~flashfxp/1E7C34C6_edit.tmp/cron.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/nosql_function.php" />
-        <option value="$PROJECT_DIR$/nosql.php" />
         <option value="$PROJECT_DIR$/syncdb.php" />
+        <option value="$PROJECT_DIR$/elatic.php" />
+        <option value="$PROJECT_DIR$/nosql.php" />
       </list>
     </option>
   </component>
@@ -153,7 +148,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/streams" />
       <path value="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch" />
@@ -195,8 +190,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.stylelint" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
@@ -212,6 +213,16 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="syncdb.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/syncdb.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.syncdb.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -230,19 +241,22 @@
       <workItem from="1583487108947" duration="1864000" />
       <workItem from="1583491974247" duration="6000" />
       <workItem from="1583503682414" duration="235000" />
-      <workItem from="1583817586235" duration="490000" />
+      <workItem from="1583817586235" duration="1255000" />
+      <workItem from="1583830745946" duration="51000" />
+      <workItem from="1583846232816" duration="1235000" />
+      <workItem from="1583901113395" duration="134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5128000" />
+    <option name="totallyTimeSpent" value="7313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1931" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16675575" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17156601" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -295,6 +309,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/for6.php" />
+    <entry file="file://$PROJECT_DIR$/logs/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://E:/FlashFXP/Cache/~flashfxp/1E7C34C6_edit.tmp/cron.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -309,6 +331,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -319,8 +344,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/for6.php">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/elatic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phongthuy.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -329,17 +358,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elatic.php">
+    <entry file="file://$PROJECT_DIR$/syncdb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="720" lean-forward="true" selection-start-line="720" selection-end-line="720" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="459">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -356,15 +378,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nosql.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="215" column="26" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/syncdb.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="51">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>

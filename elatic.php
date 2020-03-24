@@ -31,7 +31,7 @@ function log($log)
 {
     global $client,$home_db_db;
 
-    $params['index'] = $home_db_db."_logs";
+    $params['index'] = "logs";
     $params['type'] = "_doc";
     $params['body'] = $log;
     $client->index($params);
@@ -40,7 +40,7 @@ function error_log($log)
 {
     global $client, $home_db_db;
 
-    $params['index'] = $home_db_db."_error_logs";
+    $params['index'] = "error_logs";
     $params['type'] = "_doc";
     $params['body'] = $log;
     $client->index($params);
@@ -321,7 +321,7 @@ function SqlToElatic($sql2)
     }
 
 
-    if (preg_match('/and(\s)?\(giaban(\s)?>=(\s)?([\d]+)(\s)?and(\s)?giaban(\s)?<=(\s)?([\d]+)\)/', $sql, $range)) {
+    if (preg_match('/and(\s)?\(giaban(\s)?>=(\s)?([\d.]+)(\s)?and(\s)?giaban(\s)?<=(\s)?([\d.]+)\)/', $sql, $range)) {
 
 
         $and[] = ['range' =>
@@ -709,10 +709,6 @@ function SqlToElatic($sql2)
         $array['sql']=preg_replace('/limit(.*)/','',$sql);
         $array['elatic']=json_encode($body);
         log($array);
-        file_put_contents(__DIR__ . "/logs/elatic.txt", json_encode($body));
-        $sql .= "\n\n==================================\n\n";
-        $sql .= str_replace(['(', ')', ' '], ['\(', '\)', '(\s)?'], $sql);
-        file_put_contents(__DIR__ . "/logs/sql.txt", $sql);
 
 
     }

@@ -14,6 +14,7 @@ function shutdown_error_handler()
         $message = '' . $lasterror['type'] . ') | PHP Stopped | Message (' . $lasterror['message'] . ') | File (' . $lasterror['file'] . '';
 
         $lasterror['url'] = ($_SERVER['HTTPS'] ? 'https://' : 'http://') . @$_SERVER['HTTP_HOST'] . @$_SERVER['REQUEST_URI'];
+        $lasterror['domain'] = @$_SERVER['HTTP_HOST'];
         $lasterror['time'] =time();
         \elatic\error_log($lasterror);
     }
@@ -31,7 +32,7 @@ class nosql
 
     public function __construct($config)
     {
-        $this->client = ClientBuilder::create()->setHosts($config['hosts'])->build();
+        $this->client = ClientBuilder::create()->build();
         $this->index = $config['index'];
     }
 
@@ -168,13 +169,13 @@ class nosql
 
             }
 
-            if (isset($params)) {
-                $responses = $this->client->bulk($params);
-                unset($responses);
-                unset($params);
-            }
 
+        }
 
+        if (isset($params)) {
+            $responses = $this->client->bulk($params);
+            unset($responses);
+            unset($params);
         }
 
 
@@ -214,7 +215,7 @@ class nosql
         $data = [];
 
         deletesynced($db);
-        $query = $db->query("select * from sim where sync = 0 limit 10000");
+        $query = $db->query("select * from sim where sync = 0 limit 20000");
         $i = 0;
         while ($row = $query->fetch_assoc()) {
 
@@ -237,7 +238,7 @@ class nosql
         $this->bulk_data($data, $this->index);
         if($db->query("update sim SET sync = 1 WHERE sim2 IN(" . @join(', ', $sims) . ")"))
         {
-            
+
             unset($sims);
 
         }

@@ -12,9 +12,9 @@ if (file_exists(__DIR__ . "/../../conf2.php")) {
 }
 include  __DIR__."/../elatic.php";
 
-$params['index'] = $home_db_db."_error_logs";
+$params['index'] ="error_logs";
 $params['body']['sort']['_id']['order']="desc";
-$params['body']['size']=100;
+$params['body']['size']=200;
 
 $result = $client->search($params);
 

@@ -26,6 +26,43 @@ function getById($id)
 
 }
 
+function loais()
+{
+
+    $loai = [
+        1 => ['Sim Lục quý', 'sim-luc-quy'], //1
+        2 => ['Sim ngũ quý', 'sim-ngu-quy'], //2
+        3 => ['Sim tứ quý', 'sim-tu-quy'], //3
+        4 => ['Sim tam hoa kép', 'sim-tam-hoa-kep'], //4
+        5 => ['Sim Taxi hai', 'sim-taxi-hai'], //5
+        6 => ['Sim Taxi ba', 'sim-taxi-ba'], //6
+        7 => ['Sim tam hoa', 'sim-tam-hoa'], //7
+        8 => ['Sim tiến kép', 'sim-tien-kep'], //8
+        9 => ['Sim tiến đôi', 'sim-tien-doi'], //9
+        10 => ['Sim gánh kép', 'sim-ganh-kep'], //10
+        11 => ['Sim kép ba', 'sim-kép-ba'], //11
+        12 => ['Sim tiến đơn', 'sim-tien-don'], //12
+        13 => ['Sim Lục quý giữa', 'sim-luc-quy-giua'], //13
+        14 => ['Sim Lộc Phát', 'sim-loc-phat'], //14
+        15 => ['Sim Thần Tài', 'sim-than-tai'], //15
+        16 => ['Sim Ông Địa', 'sim-ong-dia'], //16
+        17 => ['Sim kép', 'sim-kep'], //17
+        18 => ['Sim lặp', 'sim-lap'], //18
+        19 => ['Sim ngũ quý giữa', 'sim-ngu-quy-giua'], //19
+        20 => ['Sim tứ quý giũa', 'sim-tu-quy-giua'], //20
+        21 => ['Sim đảo', 'sim-dao'], //21
+        22 => ['Sim gánh', 'sim-ganh'], //22
+        24 => ['Sim đặc biệt', 'sim-dac-biet'], //24
+        25 => ['Sim Năm sinh', 'sim-nam-sinh'], //25
+        26 => ['Sim đầu số cổ', 'sim-dau-co'], //26
+        27 => ['Sim dễ nhớ', 'sim-de-nho'] //27
+    ];
+    $loais = [];
+    foreach ($loai AS $row) {
+        $loais[$row[1]] = $row[0];
+    }
+    return $loais;
+}
 
 function log($log)
 {

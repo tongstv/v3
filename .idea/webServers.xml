@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="91089f63-1a32-4511-8b7f-1b595e8016fd" name="ssh" url="http://stv.vn">
+        <fileTransfer host="stv.vn" port="2212" rootFolder="/usr/local/lib/php/app/v3" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2212" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

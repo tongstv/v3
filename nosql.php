@@ -196,7 +196,7 @@ class nosql
 
     }
 
-    public function syncdb($config,$new=0)
+    public function syncdb($config, $new = 0)
     {
 
         global $home_db_db;
@@ -205,49 +205,77 @@ class nosql
         $db = new mysqli($config['host'], $config['db_user'], $config['db_pass'],
             $config['db_name']);
 
-        if($new==1)
-        {
+        deletesynced($db);
+        $sync = "where sync =0";
+        if ($new == 1) {
             $db->query("update sim SET sync=0");
+            $this->client->indices()->delete(['index' => $this->index]);
+            $db->query("CREATE TRIGGER `syncdelete` AFTER DELETE ON `sim`
+ FOR EACH ROW INSERT INTO sync (_type,simdl)
+   VALUES ('DELETE', OLD.simdl)");
+            echo "Hoàn thành đồng bộ lại\n";
+            $sync = "";
+
         }
 
 
         $this->addcol($db);
         $data = [];
 
-        deletesynced($db);
-        $query = $db->query("select * from sim where sync = 0 limit 20000");
-        $i = 0;
-        while ($row = $query->fetch_assoc()) {
 
-            $i++;
-            unset($row['stype']);
+        $count = $db->query("select count(*) from sim {$sync}");
+        $count = $count->fetch_row();
 
-            $row['loai'] = phanloai($row['sim1']);
-            $row['tong'] = tinhtong($row['sim2']);
-            $row['mang'] = simtomang($row['sim2']);
-            $row['dau'] = substr($row['sim2'], 0, 2);
-            $row['diem']=substr( $row['tong'] ,-1,1);
+        $count = $count[0];
 
-            if ($row['diem'] == 0) $row['diem'] = 10;
-
-            $sims[] = "'" . $row['sim2'] . "'";
-            $data[] = $row;
+        $max = 20000;
+        $num = ceil($count / $max);
 
 
-        }
-        $this->bulk_data($data, $this->index);
-        if($db->query("update sim SET sync = 1 WHERE sim2 IN(" . @join(', ', $sims) . ")"))
-        {
+        for ($i = 0; $i < $num; $i++) {
 
+            $bg = $max * $i;
+            print "start " . $bg . "\n";
+
+            $query = $db->query("select * from sim  {$sync}  limit $bg,$max");
+
+            while ($row = $query->fetch_assoc()) {
+
+
+                unset($row['stype']);
+
+                $row['loai'] = phanloai($row['sim1']);
+                $row['tong'] = tinhtong($row['sim2']);
+                $row['mang'] = simtomang($row['sim2']);
+                $row['dau'] = substr($row['sim2'], 0, 2);
+                $row['diem'] = substr($row['tong'], -1, 1);
+
+                if ($row['diem'] == 0) $row['diem'] = 10;
+
+                $sims[] = "'" . $row['sim2'] . "'";
+                $data[] = $row;
+
+
+            }
+            $this->bulk_data($data, $this->index);
+
+
+            if ($sync) {
+                if ($db->query("update sim SET sync = 1 WHERE sim2 IN(" . @join(', ', $sims) . ")")) {
+
+
+                }
+
+            }
             unset($sims);
 
+
+            unset($data);
+            $query->free();
+            unset($row);
+            unset($query);
+
         }
-
-
-        unset($data);
-        $query->free();
-        unset($row);
-        unset($query);
         $db->close();
     }
 }

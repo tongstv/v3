@@ -4,8 +4,7 @@ namespace elatic;
 if (!defined('JSON_PRESERVE_ZERO_FRACTION')) {
     define('JSON_PRESERVE_ZERO_FRACTION', 1024);
 }
-require 'app/v3/vendor/autoload.php';
-
+require dirname(__FILE__) . '/vendor/autoload.php';
 use Elasticsearch\ClientBuilder;
 
 $client = ClientBuilder::create()->build();
@@ -19,7 +18,7 @@ function getById($id)
     $params['id'] = $id;
     $response = [];
 
-    $response = $client->get($params)['_source'];
+   $response = $client->get($params)['_source'];
 
 
     return $response;
@@ -186,6 +185,10 @@ function SqlToElatic($sql2)
     if (preg_match('/limit(\s)?([0-9]+)(\s)?\,(\s)?([0-9]+)/', $sql, $limit)) {
         $from = $limit[2];
         $size = $limit[5];
+
+
+        if ($from > 9900) $from = 9900;
+
         $body['body']['from'] = $from;
         $body['body']['size'] = $size;
 

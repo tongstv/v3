@@ -7,7 +7,8 @@ if (!defined('JSON_PRESERVE_ZERO_FRACTION')) {
 require dirname(__FILE__) . '/vendor/autoload.php';
 use Elasticsearch\ClientBuilder;
 
-$client = ClientBuilder::create()->SetHost->build();
+$config_server=require __DIR__'/config_server.php';
+$client = ClientBuilder::create()->setHosts([$config_server['host']])->build();
 
 function getById($id)
 {

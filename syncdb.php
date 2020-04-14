@@ -1,27 +1,9 @@
 <?php
 require __DIR__ . "/nosql.php";
 
-$config['hosts'] = ["http://localhost:9200"];
+$config_server=require __DIR__'/config_server.php';
+$config['hosts'] = [$config_server['host']];
 
-
-register_shutdown_function("shutdown_error_handler1");
-
-function shutdown_error_handler1()
-{
-
-
-    $lasterror = error_get_last();
-    if (isset($lasterror)) {
-        $message = '' . $lasterror['type'] . ') | PHP Stopped | Message (' . $lasterror['message'] . ') | File (' . $lasterror['file'] . '';
-
-        $lasterror['url'] = ($_SERVER['HTTPS'] ? 'https://' : 'http://') . @$_SERVER['HTTP_HOST'] . @$_SERVER['REQUEST_URI'];
-        $lasterror['domain'] = @$_SERVER['HTTP_HOST'];
-        $lasterror['time'] = time();
-        \elatic\error_log($lasterror);
-    }
-
-
-}
 
 
 if (!isset($home_db_db)) {

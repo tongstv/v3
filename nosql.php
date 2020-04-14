@@ -223,10 +223,19 @@ class nosql
         $data = [];
 
 
-        $count = $db->query("select count(*) from sim {$sync}");
-        $count = $count->fetch_row();
+        if($new==1)
+        {
+            $count = $db->query("select count(*) from sim {$sync}");
+            $count = $count->fetch_row();
 
-        $count = $count[0];
+            $count = $count[0];
+        }
+        else
+        {
+            $count =20000;
+        }
+
+
 
         $max = 20000;
         $num = ceil($count / $max);

@@ -179,6 +179,9 @@ class nosql
         }
 
 
+        echo $responses;
+
+
     }
 
     function addcol($db)
@@ -210,12 +213,6 @@ class nosql
         if ($new == 1) {
             $db->query("update sim SET sync=0");
             $this->client->indices()->delete(['index' => $this->index]);
-            $db->query("CREATE TRIGGER `syncdelete` AFTER DELETE ON `sim`
- FOR EACH ROW INSERT INTO sync (_type,simdl)
-   VALUES ('DELETE', OLD.simdl)");
-            echo "Hoàn thành đồng bộ lại\n";
-            $sync = "";
-
         }
 
 
@@ -232,12 +229,12 @@ class nosql
         }
         else
         {
-            $count =20000;
+            $count =40000;
         }
 
 
 
-        $max = 20000;
+        $max = 30000;
         $num = ceil($count / $max);
 
 

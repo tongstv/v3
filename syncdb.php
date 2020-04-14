@@ -39,28 +39,7 @@ $config['index'] = $home_db_db;
 
 function deletesynced($db)
 {
-    $sql = "CREATE TABLE IF NOT EXISTS `sync` (
-    `id` int(11) unsigned NOT NULL auto_increment,
-    `_type` varchar(255) NOT NULL default '',
-    `simdl` varchar(255) NOT NULL default '',
-    PRIMARY KEY  (`id`))";
 
-    $db->query($sql);
-
-    $db->query("CREATE TRIGGER `syncdelete` AFTER DELETE ON `sim`
- FOR EACH ROW INSERT INTO sync (_type,simdl)
-   VALUES ('DELETE', OLD.simdl)");
-
-    $res = $db->query("select * from sync");
-    $simdls = [];
-    $ids = [];
-    while ($row = $res->fetch_assoc()) {
-
-        \elatic\deletesimdl($row['simdl']);
-
-        $ids[] = $row['id'];
-    }
-    $db->query("delete from sync where id IN(" . join(",", $ids) . ")");
 
 
 }

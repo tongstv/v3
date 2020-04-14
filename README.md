@@ -35,7 +35,33 @@
    
 ## các  bước nâng cấp
 1. upload thư mục **v3** lên thư mục root
-2. include file **v3/elatic.php** vào file **index.php**
+2. conf2.php thêm 
+
+```
+        define('version','3');
+        register_shutdown_function("shutdown_error_handler");
+        
+        function shutdown_error_handler()
+        {
+        
+        
+            $lasterror = error_get_last();
+            if (isset($lasterror)) {
+                $message = '' . $lasterror['type'] . ') | PHP Stopped | Message (' . $lasterror['message'] . ') | File (' . $lasterror['file'] . '';
+        
+                $lasterror['url'] = ($_SERVER['HTTPS'] ? 'https://' : 'http://') . @$_SERVER['HTTP_HOST'] . @$_SERVER['REQUEST_URI'];
+                $lasterror['domain'] = @$_SERVER['HTTP_HOST'];
+                $lasterror['time'] = time();
+                \elatic\error_log($lasterror);
+            }
+        
+        
+        }
+```
+
+
+3. include file **v3/elatic.php** vào file **index.php**
+
 ```
 <?php
 session_start();

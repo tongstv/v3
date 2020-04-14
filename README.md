@@ -88,6 +88,26 @@ require_once "v3/elatic.php"; #Thêm dòng này
 
 ```
 
+
+#function create_loai
+```
+function create_loai($loai, $sloai)
+{
+    $str = "";
+    $loais = \elatic\loais1();
+    foreach ($loais AS $link_url => $link_name) {
+
+        $str .= "<a class=\"list-group-item\" href='" . $link_url . ".html'>" . $link_name . "</a>
+        ";
+
+
+    }
+    return $str;
+}
+
+```
+
+
 #file ordered.php
 ```
         if (isset($_SERVER['HTTP_REFERER'])) {

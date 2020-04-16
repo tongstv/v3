@@ -1,13 +1,14 @@
 <?php
 
 namespace elatic;
+
 if (!defined('JSON_PRESERVE_ZERO_FRACTION')) {
     define('JSON_PRESERVE_ZERO_FRACTION', 1024);
 }
 require dirname(__FILE__) . '/vendor/autoload.php';
 use Elasticsearch\ClientBuilder;
 
-$config_server=require __DIR__'/config_server.php';
+$config_server=require __DIR__.'/config_server.php';
 $client = ClientBuilder::create()->setHosts([$config_server['host']])->build();
 
 function getById($id)
@@ -19,7 +20,7 @@ function getById($id)
     $params['id'] = $id;
     $response = [];
 
-   $response = $client->get($params)['_source'];
+    $response = $client->get($params)['_source'];
 
 
     return $response;
@@ -120,7 +121,7 @@ function maploai($url)
 }
 function deletesimdl($simdl)
 {
-    global $client, $home_db_db;
+    global $client;
     $client->deleteByQuery([
         'index' => $home_db_db,
         'type' => '_doc',
